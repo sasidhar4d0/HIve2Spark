@@ -10,8 +10,10 @@ object Constants extends Serializable {
   val EXECUTORMEMORY = "spark.executor.memory"
   val DRIVERMEMORYVALUE = "Driver Memory"
   val EXECUTORMEMORYVALUE = "Executor Memory"
-  val METADATA = "Meta Data"
-  val DELIMITER = "Delimiter"
-  val NONNULL = "Non Null"
+
+  val METADATA = "MetaData"
+  val DATA = "DataSep"
+  val DELIMITER = "Sep"
+  val NONNULL = "NonNullable"
 
 }
