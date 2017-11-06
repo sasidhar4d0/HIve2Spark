@@ -1,0 +1,27 @@
+MetaData:=Col1:=IntegerType
+MetaData:=Col2:=StringType
+MetaData:=Col3:=IntegerType
+MetaData:=Col4:=StringType
+
+NonNullable:=Col1:=1
+NonNullable:=Col3:=3
+
+DataSep:=Sep:=\|
+
+Query:=Temp_Table:=orders_temp
+Query:=Main_Query:=create table if not exists orders_sasidhar as select * from orders_temp
+
+SCD:=Type2:=false
+SCD:=JoinID:=ID
+SCD:=Columns:=All
+
+DATAQUALITY:=ERRORLOG:=true
+DATAQUALITY:=BatchId:=1
+DATAQUALITY:=ActivityId:=Hist_Product_Raw_Int
+DATAQUALITY:=PrimaryKey:=C1
+
+ERRORSCHEMA:=req:=true
+ERRORSCHEMA:=Path:=adl://batpetradlanalyticsadls.azuredatalakestore.net/HIVEBI/ProductErrorRecords
+
+AUDITSCHEMA:=req:=true
+AUDITSCHEMA:=Path:=adl://batpetradlanalyticsadls.azuredatalakestore.net/HIVEBI/ProductAuditRecords
