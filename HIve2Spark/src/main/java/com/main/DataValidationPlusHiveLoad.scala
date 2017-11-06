@@ -13,7 +13,7 @@ import org.apache.spark.sql.hive.{HiveContext => HC}
 import org.apache.spark.rdd.{RDD => mainRDD}
 import org.apache.spark.sql.types.{StructType => structType}
 
-object SparkConversion {
+object DataValidationPlusHiveLoad {
 
   def main(args: Array[String]): Unit = {
 
@@ -96,7 +96,7 @@ object SparkConversion {
 
 //Command to run this job
 /*
-spark-submit --class com.main.SparkConversion --deploy-mode client --master local --driver-memory 1G
+spark-submit --class com.main.DataValidationPlusHiveLoad --deploy-mode client --master local --driver-memory 1G
 --executor-memory 1G /home/cloudera/Desktop/Sasidhar/spark-jars/dmac-2.0.jar
 /user/cloudera/selfproject/params
 /user/cloudera/selfproject/input
