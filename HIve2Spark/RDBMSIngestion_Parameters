@@ -1,0 +1,14 @@
+Ingestion := connection_string := jdbc:mysql://localhost
+Ingestion := source_db_name := retail_db
+Ingestion := username := root
+Ingestion := password := cloudera
+Ingestion := source_table := orders
+Ingestion := hive_table := orders
+Ingestion := hive_temp_table := hive_temp
+Ingestion := full_load := no
+Ingestion := check_column := order_id
+Ingestion := hive_max_value := hive_max
+
+
+
+
