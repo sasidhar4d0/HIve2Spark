@@ -13,6 +13,8 @@ import org.apache.spark.sql.hive.{HiveContext => HC}
 import org.apache.spark.rdd.{RDD => mainRDD}
 import org.apache.spark.sql.types.{StructType => structType}
 
+/* Created by Sasidhar */
+
 object DataValidationPlusHiveLoad {
 
   def main(args: Array[String]): Unit = {
@@ -25,7 +27,7 @@ object DataValidationPlusHiveLoad {
     val invalidrecords = args(3)
 
     //Spark Context and Hive Context Creation
-    val conf = new SparkConf().setAppName("File to Hive Ingestion").setMaster("local")
+    val conf = new SparkConf().setAppName("File to Hive Ingestion")
     val sc = new SparkContext(conf)
     val hiveContext = new HiveContext(sc)
 

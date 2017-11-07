@@ -10,6 +10,7 @@ import org.apache.spark.sql.hive.HiveContext
 import main.java.com.main.utility.GenericFunctions
 import main.java.com.main.constants.{Constants=>const}
 
+/* Created by Sasidhar */
 
 object DatabaseIngestion {
 
@@ -19,7 +20,7 @@ object DatabaseIngestion {
 
     val paramspath = args(0)
 
-    val conf = new SparkConf().setAppName("MYSQL").setMaster("local")
+    val conf = new SparkConf().setAppName("RDBMS2HiveIngestion")
     val sc = new SparkContext(conf)
     val sq = new HiveContext(sc)
 
