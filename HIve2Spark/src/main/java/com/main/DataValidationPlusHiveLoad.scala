@@ -19,7 +19,6 @@ object DataValidationPlusHiveLoad {
 
   def main(args: Array[String]): Unit = {
 
-
     // Input Parameters
     val paramspath = args(0)
     val inputpath = args(1)
