@@ -15,12 +15,21 @@ object SparkHqlWrapper {
     val conf = new SparkConf()
       .set("hive.exec.dynamic.partition.mode", "nonstrict")
       .set("hive.exec.orc.default.buffer.size", "131072")
+      .setAppName("SparkHqlWrapper")
     val sc = new SparkContext(conf)
     val hiveContext = new HiveContext(sc)
+    val input_path = args(0)
 
-    //Reading the job execution map into an Array.
+    //Reading the job execution map into an Array
 
-    val job_metadata = scala.io.Source.fromFile(args(0)).getLines().filter(!_.isEmpty).map(line => line.split(",").map(_.trim)).toArray
+    val job_metadata = sc.textFile(input_path).filter(!_.isEmpty).map(line => line.split(",").map(_.trim)).collect()
+
+    // Get the HQL from the input file and convert to String
+
+    def paramAssignment(hql_location: String): String = {
+
+      sc.textFile(hql_location).toLocalIterator.toList.mkString
+    }
 
     //Evaluating and executing the hql
 
@@ -43,11 +52,9 @@ object SparkHqlWrapper {
 
     //loop to process all lines of input in sequence
     for (i <- job_metadata.indices) {
-      createTT(job_metadata(i)(1), job_metadata(i)(2), job_metadata(i)(3), job_metadata(i)(4), job_metadata(i)(5))
+      createTT(job_metadata(i)(1), job_metadata(i)(2), job_metadata(i)(3), job_metadata(i)(4), paramAssignment(job_metadata(i)(5)))
     }
 
     sc.stop()
   } //closing main
 }
-//closing object
-
