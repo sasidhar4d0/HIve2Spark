@@ -1,0 +1,29 @@
+
+                                 WARNING!!!
+                    READ THIS BEFORE ATTEMPTING TO LOGON
+
+      This System is for the use of authorized users only.  Individuals
+      using this computer without authority, or in excess of their
+      authority, are subject to having all of their activities on this
+      system monitored and recorded by system personnel.  In the course
+      of monitoring individuals improperly using this system, or in the
+      course of system maintenance, the activities of authorized users
+      may also be monitored.  Anyone using this system expressly
+      consents to such monitoring and is advised that if such
+      monitoring reveals possible criminal activity, system personnel
+      may provide the evidence of such monitoring to law enforcement
+      officials.
+
+      Cisco Acceptable Use Policy:
+      http://wwwin.cisco.com/infosec/policies/acceptable_use.shtml
+
+        ===========================================================
+          NOTE: SSH ON THIS SERVER USES YOUR SOFTOKEN/DESCARD
+                ONE-TIME PASSWORD. FAQ: http://otp.cisco.com
+        ===========================================================
+
+rsync: change_dir "/hdfs/app/qa/ASBI/Enterprise_Data/Services/Advanced_Services" failed: No such file or directory (2)
+
+sent 16 bytes  received 12 bytes  56.00 bytes/sec
+total size is 0  speedup is 0.00
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1039) [sender=3.0.6]
